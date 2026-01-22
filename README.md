@@ -26,5 +26,5 @@ HiLogic Solutions cuenta con 8 sucursales y planea expansión. El sistema de bas
    - Definición correcta de claves compuestas.
 
 ---
-**Autor:** Daniel Ceballos  
-**Carrera:** Analista Programador
+**Autor:** Daniel Ceballos Troncoso 
+**Carrera:** Analista Programador Computacional
