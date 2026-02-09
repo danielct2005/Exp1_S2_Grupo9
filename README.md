@@ -1,30 +1,36 @@
-# Diseño de Base de Datos - HiLogic Solutions 💻
+# Diseño de Base de Datos - Caso Retail Solari S.A.
 
-Este repositorio contiene el modelado de datos conceptual (MER) y lógico (Relacional) para **HiLogic Solutions**, una empresa de comercialización de tecnología. El proyecto aborda desafíos de escalabilidad, gestión de inventario y jerarquías complejas de personal y clientes.
+Este repositorio contiene la solución para la Evaluación Sumativa de la Semana 5, correspondiente a la asignatura de **Base de Datos**. El proyecto consiste en la normalización y modelado de datos para la empresa "Retail Solari S.A.".
 
-## 📋 Descripción del Caso
-HiLogic Solutions cuenta con 8 sucursales y planea expansión. El sistema de bases de datos diseñado soluciona problemas de:
-- **Control de Inventario:** Gestión de productos, stock y precios.
-- **Jerarquías de Clientes:** Segmentación en Clientes VIP (descuento porcentual) y Normales (descuento fijo).
-- **Recursos Humanos:** Manejo de contratos diferenciados para trabajadores indefinidos (con beneficios) y pasantes.
-- **Ventas:** Registro detallado de boletas y transacciones.
+## 📋 Información del Estudiante
+* **Nombre:** Daniel [Tu Apellido]
+* **Carrera:** Analista Programador
+* **Asignatura:** Base de Datos
+* **Fecha:** Febrero 2026
 
-## 🛠 Herramientas y Metodología
-- **Software:** Oracle SQL Data Modeler.
-- **Modelo Extendido (MER-E):** Implementación de supertipos y subtipos para manejar especializaciones.
-- **Notaciones:** Barker (Conceptual) y Bachman (Relacional/Ingeniería).
+## 🚀 Descripción del Proyecto
+El objetivo principal fue transformar un modelo conceptual incompleto en un **Modelo Relacional Normalizado (3FN)**, respetando las reglas de negocio de una empresa de retail con presencia nacional.
 
-## 🚀 Puntos Fuertes del Diseño
-1. **Manejo de Jerarquías:**
-   - Implementación de herencia exclusiva para `Trabajadores` (Indefinido vs Pasante).
-   - Especialización de `Clientes` según reglas de fidelización.
-2. **Integridad de Datos:**
-   - Uso de relaciones identificadoras para el detalle de ventas (`Detalle_Boleta`).
-   - Restricciones de unicidad y obligatoriedad según reglas de negocio.
-3. **Optimización de Tipos:**
-   - Uso de `NUMBER(3,1)` para porcentajes precisos.
-   - Definición correcta de claves compuestas.
+### Entregables incluidos:
+1.  **Modelo Entidad-Relación Extendido (MER-E):** En notación Barker, incluyendo jerarquías y atributos obligatorios/opcionales.
+2.  **Modelo Relacional:** Normalizado hasta la Tercera Forma Normal (3FN), con definición de Claves Primarias (PK) y Foráneas (FK).
+3.  **Script SQL (DDL):** Código generado para la creación de tablas en Oracle Database (11g/12c).
 
----
-**Autor:** Daniel Ceballos Troncoso  
-**Carrera:** Analista Programador Computacional
+## 🛠️ Herramientas Utilizadas
+* **Oracle SQL Developer Data Modeler** (Versión 24.3)
+
+## 🔍 Decisiones de Diseño Clave
+Para cumplir con los requerimientos del caso, se implementaron las siguientes lógicas:
+
+* **Jerarquía de Proveedores:** Se utilizó una relación de **Supertipo/Subtipo** exclusiva para diferenciar entre *Empresas* (con sitio web opcional) y *Personas Naturales* (con nombre y apellido).
+* **Normalización de Venta:** Se creó la entidad asociativa `DETALLE_BOLETA` para resolver la relación muchos-a-muchos entre Boletas y Productos.
+* **Identificadores Compuestos:** Se utilizaron relaciones identificadoras para entidades dependientes como `MODELO` y `DETALLE_BOLETA`.
+* **Reglas de Negocio:** Se configuraron atributos opcionales (ej. `fecha_vencimiento` en Productos) y obligatorios según el enunciado.
+
+## 📂 Estructura del Repositorio
+```text
+├── Script_DDL.sql          # Código SQL para crear la base de datos
+├── Modelo_Logico.png       # Captura del diagrama MER-E (Barker)
+├── Modelo_Relacional.png   # Captura del diagrama de tablas
+├── Solari_Design.dmd       # Archivo fuente de Data Modeler
+└── README.md               # Este archivo
