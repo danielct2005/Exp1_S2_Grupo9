@@ -3,9 +3,8 @@
 Este repositorio contiene la solución para la Evaluación Sumativa de la Semana 5, correspondiente a la asignatura de **Base de Datos**. El proyecto consiste en la normalización y modelado de datos para la empresa "Retail Solari S.A.".
 
 ## 📋 Información del Estudiante
-* **Nombre:** Daniel [Tu Apellido]
+* **Nombre:** Daniel Ceballos
 * **Carrera:** Analista Programador
-* **Asignatura:** Base de Datos
 * **Fecha:** Febrero 2026
 
 ## 🚀 Descripción del Proyecto
